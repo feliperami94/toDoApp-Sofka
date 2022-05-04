@@ -1,6 +1,5 @@
 import React, { createContext, useReducer } from 'react'
-import reducer from './reducer';
-
+import reducer from './Reducer'
 const initialState={
     note:{
         id: '',
@@ -8,12 +7,12 @@ const initialState={
         message: '',
         done: false
     },
-    listOfNotes:{
+    listOfNotes:[{
         id: '0',
         title: 'title by default',
         message: 'Any message written here',
         done: true
-    }
+    }]
 }
 
 const Store = createContext(initialState);
