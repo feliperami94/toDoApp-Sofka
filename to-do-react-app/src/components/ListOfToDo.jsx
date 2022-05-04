@@ -44,11 +44,19 @@ const ListOfToDo = () => {
       })
     }
 
-    const onDelete = (note) => {
-      dispatch({
-        type: 'remove-note',
-        payload: note
+    const onDelete = async (note) => {
+      let response = await fetch(`http://localhost:8081/api/v1/delete/Note/${note.id}`,
+      {
+          method: 'DELETE'
       })
+      console.log(response)
+      if (response.status === 200){
+        dispatch({
+          type: 'remove-note',
+          payload: note
+        })
+      }
+      
     }
 
   return (

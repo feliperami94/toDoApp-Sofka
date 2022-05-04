@@ -4,7 +4,6 @@ function reducer(state, action){
             const allNotesFetched = {
                 ...state, listOfNotes: action.payload
             }
-            console.log(allNotesFetched)
             return allNotesFetched
 
         case 'add-note':
