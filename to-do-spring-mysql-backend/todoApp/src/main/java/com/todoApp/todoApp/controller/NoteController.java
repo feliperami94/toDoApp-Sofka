@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("api/v1/")
 @CrossOrigin(origins = "http://localhost:3000/")
 public class NoteController {
 
@@ -21,12 +21,12 @@ public class NoteController {
         return service.getNotes();
     }
 
-    @PostMapping("save/Notes")
+    @PostMapping("save/note")
     public Note saveNote(@RequestBody Note note){
         return service.saveNote(note);
     }
 
-    @PutMapping("update/Notes")
+    @PutMapping("update/notes")
     public Note updateNote(@RequestBody Note note){
         return service.updateNote(note);
     }
